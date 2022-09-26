@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabWork6", "LabWork6\LabWor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anagram.Tests", "Anagram.Tests\Anagram.Tests.csproj", "{22AD8D04-529B-4719-9C2F-F1CE158FA7C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabWork7", "LabWork7\LabWork7.csproj", "{5FA82914-E0E5-481B-9BB8-C4FF901CFFC5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{22AD8D04-529B-4719-9C2F-F1CE158FA7C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22AD8D04-529B-4719-9C2F-F1CE158FA7C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22AD8D04-529B-4719-9C2F-F1CE158FA7C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FA82914-E0E5-481B-9BB8-C4FF901CFFC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FA82914-E0E5-481B-9BB8-C4FF901CFFC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FA82914-E0E5-481B-9BB8-C4FF901CFFC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FA82914-E0E5-481B-9BB8-C4FF901CFFC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
