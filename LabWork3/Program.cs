@@ -8,18 +8,18 @@ class Program
 {
     static void Main(string[] args)
     {
-        bool flag = false;
         int number,
             counter = 0,
             length = 3;
         int[] arr = new int[length];
+        bool flag;
 
         do
         {
-            Console.WriteLine("Write a three-digit number:");
+            Console.WriteLine("Write a {0}-digit number:", length);
             flag = Int32.TryParse(Console.ReadLine(), out number);
             number = Math.Abs(number);
-        } while (!(flag && number > 99 && number < 1000));
+        } while (!(flag && number >= (Math.Pow(10, length - 1)) && number < (Math.Pow(10, length))));
 
         for (int i = 1; i < length + 1; i++)
         {
