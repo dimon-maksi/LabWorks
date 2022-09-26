@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="3.1.2">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LabWork0\LabWork0.csproj" />
+    <ProjectReference Include="..\LabWork1\LabWork1.csproj" />
+    <ProjectReference Include="..\LabWork2\LabWork2.csproj" />
+    <ProjectReference Include="..\LabWork3\LabWork3.csproj" />
+    <ProjectReference Include="..\LabWork4\LabWork4.csproj" />
+    <ProjectReference Include="..\LabWork5\LabWork5.csproj" />
+    <ProjectReference Include="..\LabWork6\LabWork6.csproj" />
+    <ProjectReference Include="..\LabWorks\LabWorks.csproj" />
+  </ItemGroup>
+
+</Project>
