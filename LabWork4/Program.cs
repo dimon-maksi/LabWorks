@@ -6,74 +6,35 @@
 
 namespace LabWork4;
 
-static class Border
-{
-    public static uint Begin;
-    public static uint End;
-
-    static Border()
-    {
-        Console.WriteLine("Write a begin of border");
-        NewBorder(ref Begin);
-        Console.WriteLine("Write a end of border");
-        NewBorder(ref End);
-        if (Begin > End)
-        {
-            Begin += End;
-            End = Begin - End;
-            Begin = Begin - End;
-        }
-    }
-
-    public static void Extremum(int[] arr)
-    {
-        int min = arr[Begin];
-        int max = arr[Begin];
-
-        for (uint i = Begin + 1; i < End; i++)
-        {
-            if (min < arr[i])
-            {
-                min = arr[i];
-            }
-            if (max > arr[i])
-            {
-                max = arr[i];
-            }
-        }
-
-        Console.WriteLine("Minimum = {0}\tMaximum = {1}", min, max);
-    }
-
-    private static void NewBorder(ref uint number)
-    {
-        bool flag = false;
-        do
-        {
-            flag = UInt32.TryParse(Console.ReadLine(), out number);
-        } while (!(flag && number <= 20));
-    }
-}
 class Program
 {
     static void Main(string[] args)
     {
         Random random = new Random();
-        int length = 20;
-        int[] arr = new int[length];
+        int length = 10;
+        int[] arr = new int[length]; 
+        int temp = 1;
+        bool flag;
 
         for (int i = 0; i < length; i++)
         {
-            arr[i] = random.Next(10, 50);
-        }
-
-        foreach (int item in arr)
-        {
-            Console.Write(" " + item);
+            arr[i] = random.Next(1, 5);
+            Console.Write(arr[i] + " ");
         }
         Console.WriteLine();
-        Console.WriteLine("-0-------------5-------------10-------------15-------------20-");
-
-        Border.Extremum(arr);
+        Console.Write(arr[0]);
+        for (int i = 1; i < length - 1; i++)
+        {
+            if (arr[i] == arr[i + 1])
+            {
+                temp++;
+            }
+            if ((arr[i] < arr[i - temp] && arr[i] < arr[i + 1]) || (arr[i] > arr[i - temp] && arr[i] > arr[i + 1]))
+            {
+                Console.Write(" " + arr[i]);
+                temp = 1;
+            }
+        }
+        Console.WriteLine(" " + arr[length - 1]);
     }
 }
