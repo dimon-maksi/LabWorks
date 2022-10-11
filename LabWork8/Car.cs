@@ -13,16 +13,44 @@ namespace LabWork8_1
         public int Speed { get; private set; }
         public int Age { get; private set; }
 
-        public Car(string model, string color, int speed, int age)
+        public Car()
         {
-            Model = model;
-            Color = color;
-            Speed = speed;
-            Age = age;
+            bool flag = false;
+
+            Console.WriteLine("Model: ");
+            this.Model = Console.ReadLine();
+
+            Console.WriteLine("Color: ");
+            this.Color = Console.ReadLine();
+
+            int speed;
+            do
+            {
+                Console.WriteLine("Speed: ");
+                flag = Int32.TryParse(Console.ReadLine(), out speed);
+            } while (!(flag && speed >= 0));
+            this.Speed = speed;
+
+            int age;
+            do
+            {
+                Console.WriteLine("Age: ");
+                flag = Int32.TryParse(Console.ReadLine(), out age);
+            } while (!(flag && age >= 1886));
+            this.Age = age;
         }
+
+        public Car(string Model, string Color, int Speed, int Age)
+        {
+            this.Model = Model;
+            this.Color = Color;
+            this.Speed = Speed;
+            this.Age = Age;
+        }
+
         public override string ToString()
         {
-            return Model + ", with" + Color + "color," + Age + "ages and at a speed of" + Speed + "kilometers per hour.";
+            return Model + " , with " + Color + " color, " + Age + " ages and at a speed of " + Speed + " kilometers per hour.";
         }
 
     }

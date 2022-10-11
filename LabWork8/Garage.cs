@@ -8,12 +8,13 @@ namespace LabWork8_1
 {
     static public class Garage
     {
-        static private List<Car> _cars;
+        static private List<Car> _cars = new List<Car>();
         static private char[] _separators = new char[] { ' ', ',', '.'};
         private const int _countOfProp = 4;
 
         static public void LetsRide()
         {
+            Console.WriteLine("Which car do you want to drive?");
             Ride(Choose());
         }
 
@@ -22,13 +23,28 @@ namespace LabWork8_1
             _cars.Add(car);
         }
 
-        static public void RemoveCar(Car car)
+        static public void RemoveCar()
         {
+            Console.WriteLine("What car do you want to remove?");
+            Remove(Choose());
+        }
+
+        static private void Remove(Car car)
+        {
+            if (car == null)
+            {
+                return;
+            }
+            Console.WriteLine("you removed a " + car.ToString());
             _cars.Remove(car);
         }
 
         static private void Ride(Car car)
         {
+            if (car == null)
+            {
+                return;
+            }
             Console.WriteLine("You were driving a " + car.ToString());
         }
 
@@ -38,6 +54,12 @@ namespace LabWork8_1
 
             string prop = Console.ReadLine();
             List<Car> subCars = Search(prop.Split(_separators, StringSplitOptions.RemoveEmptyEntries));
+
+            if (subCars.Count == 0)
+            {
+                Console.WriteLine("You don't have such a car.");
+                return null;
+            }
 
             for (int i = 0; i < subCars.Count; i++)
             {
@@ -75,6 +97,7 @@ namespace LabWork8_1
                     else
                     {
                         flag = false;
+                        break;
                     }
                 }
                 if (flag)
