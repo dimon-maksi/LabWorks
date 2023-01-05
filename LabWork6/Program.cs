@@ -1,4 +1,6 @@
-﻿namespace LabWork6;
+﻿using LabWork6.Extension;
+
+namespace LabWork6;
 class Program
 {
     static void Main(string[] args)
@@ -15,6 +17,10 @@ class Program
             }
             Console.WriteLine(Anagram.Reverse(userSentence));
         }
+        
+        Anagram anagram = new Anagram();
+        anagram.Processing(12412468);
+
         Console.WriteLine("Thanks for using my very usable program");
         Console.ReadLine();
     }
